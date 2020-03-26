@@ -1649,7 +1649,9 @@ fi
 
 if test x"$starfield_excuse" = x; then
    for ext in pcf pcf.gz bdf bdf.gz ttf ttf.gz; do
-     for dir in . /usr/src /usr/share/fonts/X11/misc /usr/share/fonts/truetype/ttf-dejavu /usr/share/fonts/dejavu /usr/share/fonts/truetype; do
+     # Keeping this original directory structure for future builds on other platforms - Indo, 3.26
+     # /usr/src /usr/share/fonts/X11/misc /usr/share/fonts/truetype/ttf-dejavu /usr/share/fonts/dejavu /usr/share/fonts/truetype
+     for dir in . /usr/local/fonts; do
         if test -f "$dir/DejaVuSans.$ext"; then
           DJVU_FONT_SOURCE="$dir/DejaVuSans.$ext"
           break 2
@@ -1671,7 +1673,9 @@ AC_SUBST([DJVU_FONT_SOURCE])
 FONT_SOURCE=
 
 for ext in pcf pcf.gz bdf bdf.gz ttf ttf.gz; do
-  for dir in . /usr/src /usr/share/fonts/X11/misc /usr/share/fonts/unifont /usr/share/fonts/uni /usr/share/fonts/truetype/unifont /usr/share/fonts/misc; do
+  # Keeping this original directory structure for future builds on other platforms - Indo, 3.26
+  # /usr/src /usr/share/fonts/X11/misc /usr/share/fonts/unifont /usr/share/fonts/uni /usr/share/fonts/truetype/unifont /usr/share/fonts/misc
+  for dir in . /usr/local/fonts; do
     if test -f "$dir/unifont.$ext"; then
       md5="$(md5sum "$dir/unifont.$ext"|awk '{ print $1; }')"
       # PCF and BDF from version 6.3 isn't hanled properly by libfreetype.

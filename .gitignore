@@ -236,7 +236,3 @@ po/POTFILES-shell.in
 /grub-fs-tester
 grub-core/build-grub-module-verifier
 
-/.vscode
-/.vscode/*
-2020-03-26_0336.png
-*.code-workspace
